@@ -1,0 +1,1 @@
+cd /opt/jboss/jboss-eap-6.3/standalone/log/ && awk -v today=$(date -d "-1 day" +%Y-%m-%d) '{if($7==today && /Web Services executed/) {print $1,$18,$20}}' server.log > $(date -d "-1 day" +perf%Y%m%d)_53.txt && mv $(date -d "-1 day" +perf%Y%m%d)_53.txt ../ && cd /opt/jboss/jboss-eap-6.3/standalone/ && ls -l
